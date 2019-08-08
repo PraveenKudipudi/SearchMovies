@@ -1,0 +1,72 @@
+<html>
+
+ <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+  <h2> Movie Search for colors in the title</h2>
+  <div class="container-fluid bg-1 text-center">
+  
+  
+  <?php 
+  
+  function findValue ($givenString ,$srch)
+ {
+  foreach ($givenString as $key => $value ) {
+    if ( stripos ($key, $srch) > -1 )  {
+	  return $key;
+} 
+  }
+  }
+  
+  $array1 = array 
+  ( 
+  "Terminator" => ["Year"=> "1991" , "Runtime" => "39 min" ],
+   "Hercules" => ["Year"=> "1591" , "Runtime" => "39 min" ],
+    "RED" => ["Year"=> "1991" , "Runtime" => "39 min" ],
+	 "The Green Mile" => ["Year"=> "1971" , "Runtime" => "39 min" ],
+	  "Blue Jasmin" => ["Year"=> "1991" , "Runtime" => "39 min" ],
+	   "Yellow" => ["Year"=> "1991" , "Runtime" => "39 min" ],
+	    "Black" => ["Year"=> "1991" , "Runtime" => "39 min" ],
+		 "Style" => ["Year"=> "1975" , "Runtime" => "39 min" ]
+  );
+  ?>
+  
+  
+ <table class = "table-striped table-bordered table-condensed" style="width:50% align-center">
+  <tr >
+    <th>Title</th>
+    <th>Year</th> 
+    <th>Runtime</th>
+  </tr>
+  <tr bgcolor="red"  >
+    <td><?php echo($this->findValue($array1,'red')); ?></td>
+    <td><?php echo($array1[$this->findValue($array1,'red')]["Year"] );?></td> 
+    <td><?php echo($array1[$this->findValue($array1,'red')]["Runtime"]); ?></td>
+  </tr>
+  <tr bgcolor="green" >
+   <td><?php echo($this->findValue($array1,'green')); ?></td>
+    <td><?php echo($array1[$this->findValue($array1,'green')]["Year"] );?></td> 
+    <td><?php echo($array1[$this->findValue($array1,'green')]["Runtime"]); ?></td>
+  </tr>
+   <tr bgcolor="blue" >
+   <td><?php echo($this->findValue($array1,'blue') );?></td>
+    <td><?php echo($array1[$this->findValue($array1,'blue')]["Year"] );?></td> 
+    <td><?php echo($array1[$this->findValue($array1,'blue')]["Runtime"]);?></td>
+  </tr>
+   <tr bgcolor="yellow" >
+   <td><?php echo($this->findValue($array1,'yellow')); ?></td>
+    <td><?php echo($array1[$this->findValue($array1,'yellow')]["Year"] );?></td> 
+    <td><?php echo($array1[$this->findValue($array1,'yellow')]["Runtime"]);?></td>
+  </tr>
+</table>
+</div>
+
+</body></html>
